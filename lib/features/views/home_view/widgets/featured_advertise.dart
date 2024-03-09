@@ -15,7 +15,7 @@ class FeaturedAdvertise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.2,
+      height: height * 0.17,
       width: width,
       decoration:  BoxDecoration(
         borderRadius: const BorderRadius.all(
@@ -24,9 +24,9 @@ class FeaturedAdvertise extends StatelessWidget {
         boxShadow: const [
           BoxShadow(
             color: Colors.grey,
-            blurRadius: 4,
+            blurRadius: 8,
             offset: Offset(0, 5),
-            spreadRadius: 3,
+            spreadRadius: 1,
           ),
         ],
         image: DecorationImage(

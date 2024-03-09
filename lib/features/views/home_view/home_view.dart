@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:so_houser/features/views/home_view/widgets/advertise_card.dart';
 import 'package:so_houser/features/views/home_view/widgets/app_bar_button.dart';
 import 'package:so_houser/features/views/home_view/widgets/featured_advertise.dart';
 
@@ -19,60 +20,94 @@ class HomeView extends StatelessWidget {
           color: Colors.grey[200],
           borderRadius: BorderRadius.circular(28),
         ),
-        child: Column(
-          children: [
-            SizedBox(height: height * 0.03),
-            // custom app bar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                /// app bar
-                AppBarButton(icon: const Icon(Icons.menu), onPressed: () {}),
-                const Column(
-                  children: [
-                    Text('Current Location',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black38,
-                        )),
-                    SizedBox(height: 8),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.location_pin,
-                          color: Colors.blue,
-                          size: 20,
-                        ),
-                        SizedBox(width: 8),
-                        Text(
-                          'Sohag, Egypt',
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              SizedBox(height: height * 0.03),
+              // custom app bar
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  /// app bar
+                  AppBarButton(icon: const Icon(Icons.menu), onPressed: () {}),
+                  const Column(
+                    children: [
+                      Text('Current Location',
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                AppBarButton(icon: const Icon(Icons.tune), onPressed: () {}),
-              ],
-            ),
-
-            SizedBox(height: height * 0.04),
-
-            /// search bar
-            const CustomSearchField(hintText: 'Search for properties'),
-            SizedBox(height: height * 0.04),
-
-            /// featured properties advertise
-            FeaturedAdvertise(
+                            fontSize: 16,
+                            color: Colors.black38,
+                          )),
+                      SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.location_pin,
+                            color: Colors.blue,
+                            size: 20,
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'Sohag, Egypt',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  AppBarButton(icon: const Icon(Icons.tune), onPressed: () {}),
+                ],
+              ),
+          
+              SizedBox(height: height * 0.04),
+          
+              /// search bar
+              const CustomSearchField(hintText: 'Search for properties'),
+              SizedBox(height: height * 0.04),
+          
+              /// featured properties advertise
+              FeaturedAdvertise(
+                  height: height,
+                  width: width,
+                  imagePath: 'assets/images/house_5.jpg',
+                  offer: '*Get 5% off on your first booking'),
+          
+              SizedBox(height: height * 0.04),
+          
+              /// properties offers
+              AdvertiseCard(
                 height: height,
                 width: width,
-                imagePath: 'assets/images/house_5.jpg',
-                offer: '*Get 5% off on your first booking'),
-          ],
+                imagePath: 'assets/images/house_4.jpg',
+                location: 'Sohag, Egypt',
+                placeName: 'Whitespace House',
+                price: 1199,
+              ),
+              SizedBox(height: height * 0.005),
+              AdvertiseCard(
+                height: height,
+                width: width,
+                imagePath: 'assets/images/house_3.jpg',
+                location: 'Qena, Egypt',
+                placeName: 'Upper moon House',
+                price: 850,
+              ),
+              SizedBox(height: height * 0.005),
+              AdvertiseCard(
+                height: height,
+                width: width,
+                imagePath: 'assets/images/house_2.jpg',
+                location: 'Giza, Egypt',
+                placeName: 'Eve Heaven House',
+                price: 400,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
