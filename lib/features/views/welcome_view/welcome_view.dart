@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/components/custom_button.dart';
+import '../home_view/home_view.dart';
+
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
 
@@ -63,21 +66,14 @@ class WelcomeView extends StatelessWidget {
             ),
           ),
           SizedBox(height: width * 0.07),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              shape: const StadiumBorder(),
-              backgroundColor: Colors.black,
-              elevation: 8,
-              minimumSize: Size(width * 0.8, height * 0.06),
-            ),
-            child: const Text(
-              'Register Now',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
+          CustomButton(
+            width: width,
+            height: height,
+            label: 'Register Now',
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomeView()));
+            },
           ),
           SizedBox(height: width * 0.02),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
