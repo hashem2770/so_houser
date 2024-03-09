@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:so_houser/features/views/home_view/widgets/app_bar_button.dart';
+import 'package:so_houser/features/views/home_view/widgets/featured_advertise.dart';
 
 import '../../../core/components/custom_search_field.dart';
 
@@ -20,11 +21,12 @@ class HomeView extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.03),
             // custom app bar
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                /// app bar
                 AppBarButton(icon: const Icon(Icons.menu), onPressed: () {}),
                 const Column(
                   children: [
@@ -55,9 +57,19 @@ class HomeView extends StatelessWidget {
                 AppBarButton(icon: const Icon(Icons.tune), onPressed: () {}),
               ],
             ),
-            // search bar
+
             SizedBox(height: height * 0.04),
+
+            /// search bar
             const CustomSearchField(hintText: 'Search for properties'),
+            SizedBox(height: height * 0.04),
+
+            /// featured properties advertise
+            FeaturedAdvertise(
+                height: height,
+                width: width,
+                imagePath: 'assets/images/house_5.jpg',
+                offer: '*Get 5% off on your first booking'),
           ],
         ),
       ),
