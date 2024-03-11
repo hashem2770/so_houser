@@ -7,6 +7,7 @@ class PropertyModel {
   int baths;
   int area;
 
+
   PropertyModel({
     required this.title,
     required this.imageUrl,

@@ -101,6 +101,7 @@ class HomeView extends StatelessWidget {
                       ));
                     },
                     child: AdvertiseCard(
+                      tag: index,
                       height: height,
                       width: width,
                       imagePath: property.imageUrl,

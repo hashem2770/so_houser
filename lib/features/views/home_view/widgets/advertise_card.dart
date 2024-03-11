@@ -7,7 +7,7 @@ class AdvertiseCard extends StatelessWidget {
     required this.imagePath,
     required this.price,
     required this.placeName,
-    required this.location,
+    required this.location, required this.tag,
   });
 
   final double height;
@@ -16,6 +16,7 @@ class AdvertiseCard extends StatelessWidget {
   final int price;
   final String location;
   final String placeName;
+  final int tag;
 
   @override
   Widget build(BuildContext context) {
