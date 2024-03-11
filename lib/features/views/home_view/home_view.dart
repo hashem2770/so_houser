@@ -5,6 +5,7 @@ import 'package:so_houser/features/views/home_view/widgets/featured_advertise.da
 import 'package:so_houser/models/property_model.dart';
 
 import '../../../core/components/custom_search_field.dart';
+import '../details_view/details_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -93,13 +94,20 @@ class HomeView extends StatelessWidget {
                 childCount: PropertyModel.properties.length,
                 (context, index) {
                   final property = PropertyModel.properties[index];
-                  return AdvertiseCard(
-                    height: height,
-                    width: width,
-                    imagePath: property.imageUrl,
-                    location: property.location,
-                    placeName: property.title,
-                    price: property.price,
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => DetailsView(property: property),
+                      ));
+                    },
+                    child: AdvertiseCard(
+                      height: height,
+                      width: width,
+                      imagePath: property.imageUrl,
+                      location: property.location,
+                      placeName: property.title,
+                      price: property.price,
+                    ),
                   );
                 },
               ),
