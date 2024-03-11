@@ -25,7 +25,7 @@ class WelcomeView extends StatelessWidget {
                     'assets/images/house_1.jpg',
                     height: height * 0.6,
                     width: width,
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

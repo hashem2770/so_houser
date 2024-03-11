@@ -71,7 +71,7 @@ class HomeView extends StatelessWidget {
               FeaturedAdvertise(
                   height: height,
                   width: width,
-                  imagePath: 'assets/images/house_5.jpg',
+                  imagePath: 'assets/images/house_2.jpg',
                   offer: '*Get 5% off on your first booking'),
           
               SizedBox(height: height * 0.04),
@@ -98,7 +98,7 @@ class HomeView extends StatelessWidget {
               AdvertiseCard(
                 height: height,
                 width: width,
-                imagePath: 'assets/images/house_2.jpg',
+                imagePath: 'assets/images/house_1.jpg',
                 location: 'Giza, Egypt',
                 placeName: 'Eve Heaven House',
                 price: 400,
