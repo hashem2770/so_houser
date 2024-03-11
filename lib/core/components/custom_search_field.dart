@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 class CustomSearchField extends StatelessWidget {
   const CustomSearchField({
-    super.key, required this.hintText,
+    super.key, required this.hintText, required this.width,
   });
   final String hintText;
-
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 5,
+            color: Colors.grey.withOpacity(0.4),
+            spreadRadius: 2,
+            blurRadius: 4,
             offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
