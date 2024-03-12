@@ -37,51 +37,62 @@ class DetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(),
       body: CustomScrollView(
         slivers: [
           buildSliverAppBar(),
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                const SizedBox(
-                  height: 28,
-                ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      // did not bother to extract it as it only appears in this view
-                      Chip(
-                        backgroundColor: Colors.grey[300],
-                        label: Row(
-                          children: [
-                            const Icon(Icons.bed),
-                            const SizedBox(width: 8),
-                            Text('${property.beds} Beds'),
-                          ],
-                        ),
-                      ),
-                      Chip(
-                        backgroundColor: Colors.grey[300],
-                        label: Row(
-                          children: [
-                            const Icon(Icons.bathtub_outlined),
-                            const SizedBox(width: 8),
-                            Text('${property.baths} Baths'),
-                          ],
-                        ),
-                      ),
-                      Chip(
-                        backgroundColor: Colors.grey[300],
-                        label: Row(
-                          children: [
-                            const Icon(Icons.area_chart),
-                            const SizedBox(width: 8),
-                            Text('${property.area} area'),
-                          ],
-                        ),
-                      ),
-                    ]),
+               const SizedBox(
+                   height: 28
+               ),
+               // chips
+               Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: [
+                     // did not bother to extract it as it only appears in this view
+                     Chip(
+                       backgroundColor: Colors.grey[300],
+                       label: Row(
+                         children: [
+                           const Icon(Icons.bed),
+                           const SizedBox(width: 8),
+                           Text('${property.beds} Beds'),
+                         ],
+                       ),
+                     ),
+                     Chip(
+                       backgroundColor: Colors.grey[300],
+                       label: Row(
+                         children: [
+                           const Icon(Icons.bathtub_outlined),
+                           const SizedBox(width: 8),
+                           Text('${property.baths} Baths'),
+                         ],
+                       ),
+                     ),
+                     Chip(
+                       backgroundColor: Colors.grey[300],
+                       label: Row(
+                         children: [
+                           const Icon(Icons.zoom_out_map),
+                           const SizedBox(width: 8),
+                           Text('${property.area} area'),
+                         ],
+                       ),
+                     ),
+                   ]),
+               Padding(padding: const EdgeInsets.symmetric(horizontal: 12),
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   const SizedBox(height: 14),
+                   const Text('Details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                   const SizedBox(height: 8),
+                   Text('loram ttf dum text now '*70,style: const TextStyle(fontSize: 16,height: 1.8),),
+                 ],
+               ),
+               ),
               ],
             ),
           ),
