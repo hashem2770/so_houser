@@ -37,65 +37,54 @@ class DetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
+      appBar: AppBar(),
       body: CustomScrollView(
         slivers: [
           buildSliverAppBar(),
           SliverList(
-              delegate: SliverChildListDelegate([
-            Container(
-                padding: const EdgeInsets.all(12),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            delegate: SliverChildListDelegate(
+              [
+                const SizedBox(
+                  height: 28,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(property.title,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 24,
-                          )),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
+                      // did not bother to extract it as it only appears in this view
+                      Chip(
+                        backgroundColor: Colors.grey[300],
+                        label: Row(
+                          children: [
+                            const Icon(Icons.bed),
+                            const SizedBox(width: 8),
+                            Text('${property.beds} Beds'),
+                          ],
+                        ),
                       ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
+                      Chip(
+                        backgroundColor: Colors.grey[300],
+                        label: Row(
+                          children: [
+                            const Icon(Icons.bathtub_outlined),
+                            const SizedBox(width: 8),
+                            Text('${property.baths} Baths'),
+                          ],
+                        ),
                       ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
+                      Chip(
+                        backgroundColor: Colors.grey[300],
+                        label: Row(
+                          children: [
+                            const Icon(Icons.area_chart),
+                            const SizedBox(width: 8),
+                            Text('${property.area} area'),
+                          ],
+                        ),
                       ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
-                      ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
-                      ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
-                      ),
-                      const SizedBox(height: 80),
-                      Text(
-                        property.location,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
-                      )
-                    ]))
-          ]))
+                    ]),
+              ],
+            ),
+          ),
         ],
       ),
     );
